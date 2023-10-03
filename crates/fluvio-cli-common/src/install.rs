@@ -49,7 +49,7 @@ pub fn fluvio_extensions_dir() -> Result<PathBuf> {
         Ok(dir_path.into())
     } else {
         let base_dir = fluvio_base_dir()?;
-        let path = base_dir.join("extensions");
+        let path = base_dir.join("bin");
 
         if !path.exists() {
             std::fs::create_dir(&path)?;
