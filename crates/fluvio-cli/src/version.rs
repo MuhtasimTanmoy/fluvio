@@ -38,9 +38,11 @@ impl VersionOpt {
         }
 
         if let Some(metadata) = self.format_subcommand_metadata() {
-            println!("=== Plugin Versions ===");
-            for (name, version) in metadata {
-                self.print_width(&name, &version, 30);
+            if !metadata.is_empty() {
+                println!("=== Plugin Versions ===");
+                for (name, version) in metadata {
+                    self.print_width(&name, &version, 30);
+                }
             }
         }
 
